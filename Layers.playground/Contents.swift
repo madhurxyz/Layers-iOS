@@ -7,6 +7,9 @@ let superFrame = CGRect(x: 0, y: 0, width: 750, height: 1334)
 let superView2 = UIView(frame: superFrame)
 superView2.backgroundColor = .white
 
+let boardFrame = CGRect(x:0, y:0, width: superFrame.width, height: superFrame.width)
+let boardView = UIView(frame: boardFrame)
+
 for j in 0..<8 {
     let rowFrame = CGRect(x: 0, y:CGFloat((superFrame.width/8)*CGFloat(j)), width: superFrame.width, height: superFrame.width/8)
     let rowView = UIView(frame: rowFrame)
@@ -28,5 +31,7 @@ for j in 0..<8 {
         }
         rowView.addSubview(checkView)
     }
-    superView2.addSubview(rowView)
+    boardView.addSubview(rowView)
 }
+superView2.addSubview(boardView)
+
