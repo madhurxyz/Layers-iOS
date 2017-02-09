@@ -38,3 +38,13 @@ for j in 0..<8 {
 }
 superView2.addSubview(boardView)
 
+//Challenge 2: Chess Board with Pattern Images
+let superView3 = UIView(frame: superFrame)
+superView3.backgroundColor = .white
+
+let boardFrame2 = CGRect(x:0, y:0, width: superFrame.width, height: superFrame.width)
+let boardView2 = UIView(frame: boardFrame)
+boardView2.layer.borderWidth = 15
+boardView2.layer.borderColor = UIColor.black.cgColor
+boardView2.clipsToBounds = true
+superView3.addSubview(boardView2)
