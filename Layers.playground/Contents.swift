@@ -9,6 +9,9 @@ superView2.backgroundColor = .white
 
 let boardFrame = CGRect(x:0, y:0, width: superFrame.width, height: superFrame.width)
 let boardView = UIView(frame: boardFrame)
+boardView.layer.borderWidth = 15
+boardView.layer.borderColor = UIColor.black.cgColor
+boardView.clipsToBounds = true
 
 for j in 0..<8 {
     let rowFrame = CGRect(x: 0, y:CGFloat((superFrame.width/8)*CGFloat(j)), width: superFrame.width, height: superFrame.width/8)
@@ -18,7 +21,7 @@ for j in 0..<8 {
         let checkView = UIView(frame: checkFrame)
         if (j%2) == 0{
             if (i%2) == 0 {
-                checkView.backgroundColor = .black
+                checkView.backgroundColor = .red
             } else {
                 checkView.backgroundColor = .white
             }
@@ -26,7 +29,7 @@ for j in 0..<8 {
             if (i%2) == 0 {
                 checkView.backgroundColor = .white
             } else {
-                checkView.backgroundColor = .black
+                checkView.backgroundColor = .red
             }
         }
         rowView.addSubview(checkView)
